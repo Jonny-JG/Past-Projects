@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>The Clock Game!</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="game.css">
+</head>
+
+<body ng-app="PriceGame" ng-controller="GameController">
+  <div class="container-fluid" id="gameContainer">
+    <div class="row">
+      <div class="container-fluid">
+        <h1 class="page-header text-center" id="gameTitle">The Clock Game!</h1>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="container-fluid col-4" id="guessContainer">
+        <form>
+          <label>Guess Here:</label>
+          <input type="number" id="guessInput">
+          <br>
+          <br>
+        </form>
+        <button ng-click="checkGuess()" class="btn btn-success btn-sm" type="button" id="submitGuess">Submit Guess</button>
+        <div class="container-fluid col-4" id="userGuesses">
+        </div>
+      </div>
+
+      <div class="container-fluid col-8" id="prizeImage">
+        <p class="text-center" id="timer"></p>
+        <p class="text-center" id="prizeName"></p>
+        <div class="d-flex justify-content-center align-items-center" id="imageDiv">
+          <img ng-src="{{image[0].src}}" class=" img-fluid" id="prize" />
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="container-fluid">
+        <p class="text-center" id="prizeDescription"></p>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="container-fluid text-center" id="buttonBox">
+        <button ng-click="startGame()" class="btn btn-success btn-lg" type="button" id="startButton">Start Game</button>
+        <button ng-click="getPrizeImage()" class="btn btn-success btn-lg" type="button" id="prizeButton">Get Prize</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src="game.js"></script>
+
+</body>
+
+
+
+</html>
