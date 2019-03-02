@@ -1,0 +1,30 @@
+
+body{
+  background-color: grey;
+}
+
+#timer{
+  font-size: 30px;
+}
+
+#guessContainer{
+  margin-left: 15px;
+}
+
+#prize{
+  width: 100%;
+  max-width: 800px;
+  max-height: 800px;
+}
+
+#prizeName{
+  font-size: 50px;
+}
+
+#prizeDescription{
+  font-size: 30px;
+}
+
+#gameTitle{
+  font-size: 50px;
+}
