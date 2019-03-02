@@ -1,0 +1,26 @@
+<div class="jumbotron" style="padding: 45px 0px">
+  <h4 class="text-center">Tasks to Complete</h4>
+</div>
+
+  <div class="input-group">
+    <input type="text" [(ngModel)]='todoText' id="todoText" class="form-control" placeholder="Add Task" #task required>
+    <div class="input-group-append" id="addIcon">
+      <button type="button" id="addButton" (click)="addTask(task)" [disabled]="!todoText">
+        <i class="fa fa-plus-circle fa-2x"></i>
+      </button>
+    </div>
+  </div>
+
+<div style="margin: 5px 0px">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of todoArray">
+      <span [class.text-success]="item.completed" id="checkIcon" (click)="checkTask(item.$key, item.completed)">
+        <i class="fa fa-lg" [ngClass]="item.completed ? 'fa fa-check-circle' : 'fa fa-times-circle'"></i>
+      </span>
+      {{item.todoTitle}}
+      <span class="text-danger float-right" id="deleteIcon" (click)="deleteTask(item.$key)">
+        <i class="fa fa-trash fa-lg "></i>
+      </span>
+    </li>
+  </ul>
+</div>
